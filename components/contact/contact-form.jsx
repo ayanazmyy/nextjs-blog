@@ -64,6 +64,7 @@ function ContactForm() {
                 message: 'Your message was sent successfully.',
                 status: 'success'
             });
+            console.log(data)
         })
         .catch(error => {
             setRequestStatus({
@@ -71,6 +72,8 @@ function ContactForm() {
                 message: 'Something went wrong!',
                 status: 'error'
             });
+
+            console.log(error)
         })
 
         setEmailInput("");

@@ -48,9 +48,9 @@ function ContactForm() {
                 'Content-Type' : 'application/json'
             }
         })
-        .then(res => {
-            if(res.ok) {
-                return res.json();
+        .then(response => {
+            if(response.ok) {
+                return response.json();
             }
 
             return res.json().then(data => {

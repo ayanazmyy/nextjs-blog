@@ -48,14 +48,13 @@ function ContactForm() {
                 'Content-Type' : 'application/json'
             }
         })
-        .then(response => {
+        .then(async response => {
             if(response.ok) {
                 return response.json();
             }
 
-            return res.json().then(data => {
-                throw new Error('Some thing went wrong');
-            })
+            const data = await response.json();
+            throw new Error('Some thing went wrong');
             
         })
         .then(data => {
